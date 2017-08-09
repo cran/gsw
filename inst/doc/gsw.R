@@ -1,6 +1,5 @@
 ## ----echo=FALSE, results="hide"---------------------------
 options(keep.source=TRUE, width=60, prompt=' ', continue=' ', oceEOS="unesco")
-eval <- FALSE
 
 ## ---------------------------------------------------------
 library(gsw)
@@ -9,10 +8,10 @@ SA <- gsw_SA_from_SP(SP=35, p=100, longitude=188, latitude=4)
 ## ---------------------------------------------------------
 CT <- gsw_CT_from_t(SA=SA, t=10, p=100)
 
-## ----eval=eval, echo=FALSE--------------------------------
+## ----eval=FALSE, echo=FALSE-------------------------------
 #  png("TS_unesco.png", width=353, height=353, pointsize=12)
 
-## ----eval=eval--------------------------------------------
+## ----eval=FALSE-------------------------------------------
 #  library(oce)
 #  data(section)
 #  ctd <- section[["station", 100]]
@@ -20,39 +19,39 @@ CT <- gsw_CT_from_t(SA=SA, t=10, p=100)
 #  Tlim <- c(0, 25)
 #  plotTS(ctd, Slim=Slim, Tlim=Tlim, eos="unesco")
 
-## ----eval=eval, echo=FALSE--------------------------------
+## ----eval=FALSE, echo=FALSE-------------------------------
 #  dev.off()
 #  png("TS_gsw.png", width=353, height=353, pointsize=12)
 
-## ----eval=eval--------------------------------------------
+## ----eval=FALSE-------------------------------------------
 #  plotTS(ctd, Slim=Slim, Tlim=Tlim, eos="gsw")
 
-## ----eval=eval, echo=FALSE--------------------------------
+## ----eval=FALSE, echo=FALSE-------------------------------
 #  dev.off()
 #  png("TS_gsw.png", width=353, height=353, pointsize=12)
 
-## ----eval=eval, echo=FALSE--------------------------------
+## ----eval=FALSE, echo=FALSE-------------------------------
 #  png('temperature_comparison.png', width=353, height=252, pointsize=12)
 #  par(mar=c(3.2, 3, 1, 1/2), mgp=c(2, 0.85, 0))
 
-## ----eval=eval--------------------------------------------
+## ----eval=FALSE-------------------------------------------
 #  f <- (section[["CT"]] - section[["theta"]]) / section[["CT"]]
 #  hist(f, main="", xlab="(CT-theta)/CT")
 
-## ----eval=eval, echo=FALSE--------------------------------
+## ----eval=FALSE, echo=FALSE-------------------------------
 #  dev.off()
 #  png('salinity_comparison.png', width=353, height=252, pointsize=12)
 #  par(mar=c(3.2, 3, 1, 1/2), mgp=c(2, 0.85, 0))
 
-## ----eval=eval--------------------------------------------
+## ----eval=FALSE-------------------------------------------
 #  f <- (section[["SA"]] - section[["salinity"]]) / section[["SA"]]
 #  hist(f, main="", xlab="(SA-SP)/SA")
 
-## ----eval=eval, echo=FALSE--------------------------------
+## ----eval=FALSE, echo=FALSE-------------------------------
 #  dev.off()
 #  png("SSS_2.png", width=588, height=336)
 
-## ----eval=eval--------------------------------------------
+## ----eval=FALSE-------------------------------------------
 #  library(oce)
 #  data("levitus", package="ocedata")
 #  SSS <- levitus$SSS
@@ -64,7 +63,7 @@ CT <- gsw_CT_from_t(SA=SA, t=10, p=100)
 #         zlim=quantile(per, c(0.001, 0.999), na.rm=TRUE))
 #  title(expression("Percent difference between " * S[A] * " and " * S[P]))
 
-## ----eval=eval, echo=FALSE--------------------------------
+## ----eval=FALSE, echo=FALSE-------------------------------
 #  dev.off()
 
 ## ----results="hide", echo=FALSE---------------------------
