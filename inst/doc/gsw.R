@@ -8,48 +8,27 @@ SA <- gsw_SA_from_SP(SP=35, p=100, longitude=188, latitude=4)
 ## ---------------------------------------------------------
 CT <- gsw_CT_from_t(SA=SA, t=10, p=100)
 
-## ----eval=FALSE, echo=FALSE-------------------------------
-#  png("TS_unesco.png", width=353, height=353, pointsize=12)
-
 ## ----eval=FALSE-------------------------------------------
 #  library(oce)
 #  data(section)
 #  ctd <- section[["station", 100]]
 #  Slim <- c(34.8, 37.0)
 #  Tlim <- c(0, 25)
+#  par(mfcol=c(2,2))
 #  plotTS(ctd, Slim=Slim, Tlim=Tlim, eos="unesco")
-
-## ----eval=FALSE, echo=FALSE-------------------------------
-#  dev.off()
-#  png("TS_gsw.png", width=353, height=353, pointsize=12)
-
-## ----eval=FALSE-------------------------------------------
 #  plotTS(ctd, Slim=Slim, Tlim=Tlim, eos="gsw")
-
-## ----eval=FALSE, echo=FALSE-------------------------------
-#  dev.off()
-#  png("TS_gsw.png", width=353, height=353, pointsize=12)
-
-## ----eval=FALSE, echo=FALSE-------------------------------
-#  png('temperature_comparison.png', width=353, height=252, pointsize=12)
-#  par(mar=c(3.2, 3, 1, 1/2), mgp=c(2, 0.85, 0))
+#  plot(ctd[["SA"]] - ctd[["salinity"]], ctd[["z"]],
+#       xlab="Practical Salinity - Absolute Salinity", ylab="Depth [m]")
+#  plot(ctd[["CT"]] - ctd[["theta"]], ctd[["z"]],
+#       xlab="Conservative Temp. - Potential Temp.", ylab="Depth [m]")
 
 ## ----eval=FALSE-------------------------------------------
-#  f <- (section[["CT"]] - section[["theta"]]) / section[["CT"]]
-#  hist(f, main="", xlab="(CT-theta)/CT")
-
-## ----eval=FALSE, echo=FALSE-------------------------------
-#  dev.off()
-#  png('salinity_comparison.png', width=353, height=252, pointsize=12)
-#  par(mar=c(3.2, 3, 1, 1/2), mgp=c(2, 0.85, 0))
+#  f <- section[["CT"]] - section[["theta"]]
+#  hist(f, main="", breaks=100, xlab="CT-theta")
 
 ## ----eval=FALSE-------------------------------------------
-#  f <- (section[["SA"]] - section[["salinity"]]) / section[["SA"]]
-#  hist(f, main="", xlab="(SA-SP)/SA")
-
-## ----eval=FALSE, echo=FALSE-------------------------------
-#  dev.off()
-#  png("SSS_2.png", width=588, height=336)
+#  f <- section[["SA"]] - section[["salinity"]]
+#  hist(f, main="", breaks=100, xlab="Absolute Salinity - Practical Salinity")
 
 ## ----eval=FALSE-------------------------------------------
 #  library(oce)
@@ -62,9 +41,6 @@ CT <- gsw_CT_from_t(SA=SA, t=10, p=100)
 #  imagep(levitus$longitude, levitus$latitude, per, col=oceColorsJet,
 #         zlim=quantile(per, c(0.001, 0.999), na.rm=TRUE))
 #  title(expression("Percent difference between " * S[A] * " and " * S[P]))
-
-## ----eval=FALSE, echo=FALSE-------------------------------
-#  dev.off()
 
 ## ----results="hide", echo=FALSE---------------------------
 options(prompt='> ', continue='+ ', oceEOS="unesco")

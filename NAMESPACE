@@ -2,7 +2,6 @@
 useDynLib(gsw, .registration=TRUE)
 
 importFrom("utils", "data")
-importFrom("testthat", "expect_equal")
 
 export(argfix,
        gsw_adiabatic_lapse_rate_from_CT,
@@ -56,6 +55,7 @@ export(argfix,
        gsw_frazil_ratios_adiabatic,
        gsw_frazil_ratios_adiabatic_poly,
        gsw_geo_strf_dyn_height,
+       gsw_geo_strf_dyn_height_1,
        gsw_geo_strf_dyn_height_pc,
        gsw_gibbs,
        gsw_gibbs_ice,
