@@ -1,5 +1,5 @@
 Package: gsw
-Version: 1.1-1
+Version: 1.2-0
 Title: Gibbs Sea Water Functions
 Authors@R: c(
         person(given="Dan",
@@ -16,11 +16,11 @@ Authors@R: c(
             family="SCOR/IAPSO",
             role=c("aut","cph"),
             comment="Original 'Matlab' and derived code"))
-Copyright: Original algorithms and 'Matlab'/C library (c) 2015-2022
+Copyright: Original algorithms and 'Matlab'/C library (c) 2015-2023
         WG127 SCOR/IAPSO (Scientific Committee on Oceanic Research /
         International Association for the Physical Sciences of the
         Oceans, Working Group 127); C wrapper code and R code (c)
-        2015-2021 Dan Kelley and Clark Richards
+        2015-2023 Dan Kelley and Clark Richards
 Maintainer: Dan Kelley <dan.kelley@dal.ca>
 Depends: R (>= 3.5.0),
 Suggests: knitr, rmarkdown, testthat
@@ -30,9 +30,9 @@ URL: http://teos-10.github.io/GSW-R/
 License: GPL (>= 2) | file LICENSE
 LazyLoad: yes
 LazyData: no
-Packaged: 2022-10-16 10:21:26 UTC; kelley
+Packaged: 2024-08-19 16:29:53 UTC; kelley
 Encoding: UTF-8
-RoxygenNote: 7.2.1
+RoxygenNote: 7.3.2
 BuildVignettes: true
 VignetteBuilder: knitr
 NeedsCompilation: yes
@@ -40,4 +40,4 @@ Author: Dan Kelley [aut, cre, cph] (<https://orcid.org/0000-0001-7808-5911>),
   Clark Richards [aut, cph] (<https://orcid.org/0000-0002-7833-206X>),
   WG127 SCOR/IAPSO [aut, cph] (Original 'Matlab' and derived code)
 Repository: CRAN
-Date/Publication: 2022-10-16 11:32:32 UTC
+Date/Publication: 2024-08-19 17:40:02 UTC
